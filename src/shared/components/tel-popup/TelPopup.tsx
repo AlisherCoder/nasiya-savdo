@@ -1,10 +1,10 @@
-import React, { type FC, useCallback, useState } from "react";
-import { Modal, Button, Typography } from "antd";
-import { PhoneOutlined } from "@ant-design/icons";
+import React, { type FC, useCallback, useState } from 'react';
+import { Modal, Button, Typography } from 'antd';
+import { PhoneOutlined } from '@ant-design/icons';
 
 const { Text } = Typography;
 
-const TelPopUp: FC<{ phoneNumber: string }> = ({ phoneNumber = "" }) => {
+const TelPopUp: FC<{ phoneNumber: string }> = ({ phoneNumber = '' }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleClose = useCallback(() => {
@@ -20,7 +20,7 @@ const TelPopUp: FC<{ phoneNumber: string }> = ({ phoneNumber = "" }) => {
       <div>
         <Button
           type="text"
-          style={{ padding: "0" }}
+          style={{ padding: '0' }}
           onClick={handleOpenModal}
           className="flex items-center gap-2  transition-all"
         >

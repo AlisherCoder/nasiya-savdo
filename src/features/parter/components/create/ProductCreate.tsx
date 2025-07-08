@@ -1,5 +1,5 @@
-import { Button, Form, Input, Select, type FormProps } from "antd";
-import React from "react";
+import { Button, Form, Input, Select, type FormProps } from 'antd';
+import React from 'react';
 
 type FieldType = {
   title: string;
@@ -14,7 +14,7 @@ type FieldType = {
 const { TextArea } = Input;
 
 const ProductCreate = () => {
-  const onFinish: FormProps<FieldType>["onFinish"] = (values) => {
+  const onFinish: FormProps<FieldType>['onFinish'] = (values) => {
     console.log(values);
   };
 
@@ -31,7 +31,7 @@ const ProductCreate = () => {
           <Form.Item<FieldType>
             label="Nomi"
             name="title"
-            rules={[{ required: true, message: "Please input your username!" }]}
+            rules={[{ required: true, message: 'Please input your username!' }]}
           >
             <Input />
           </Form.Item>
@@ -42,14 +42,14 @@ const ProductCreate = () => {
           <Form.Item<FieldType>
             label="Kategoriya"
             name="categoryId"
-            rules={[{ required: true, message: "Please input your username!" }]}
+            rules={[{ required: true, message: 'Please input your username!' }]}
           >
             <Select
               placeholder="Kategoriya tanlang"
               options={[
                 {
-                  label: "Telefon",
-                  value: "id",
+                  label: 'Telefon',
+                  value: 'id',
                 },
               ]}
             ></Select>
@@ -58,14 +58,14 @@ const ProductCreate = () => {
           <Form.Item<FieldType>
             label="O'lchov birligi"
             name="units"
-            rules={[{ required: true, message: "Please input your password!" }]}
+            rules={[{ required: true, message: 'Please input your password!' }]}
           >
             <Select
               placeholder="Kategoriya tanlang"
               options={[
                 {
-                  label: "Telefon",
-                  value: "id",
+                  label: 'Telefon',
+                  value: 'id',
                 },
               ]}
             ></Select>
@@ -73,7 +73,7 @@ const ProductCreate = () => {
           <Form.Item<FieldType>
             label="Miqdori"
             name="quantity"
-            rules={[{ required: true, message: "Please input your username!" }]}
+            rules={[{ required: true, message: 'Please input your username!' }]}
           >
             <Input />
           </Form.Item>
@@ -81,15 +81,12 @@ const ProductCreate = () => {
           <Form.Item<FieldType>
             label="Narxi"
             name="price"
-            rules={[{ required: true, message: "Please input your password!" }]}
+            rules={[{ required: true, message: 'Please input your password!' }]}
           >
             <Input />
           </Form.Item>
         </div>
-        <Form.Item<FieldType>
-          label="Izoh"
-          name="comment"
-        >
+        <Form.Item<FieldType> label="Izoh" name="comment">
           <TextArea />
         </Form.Item>
 

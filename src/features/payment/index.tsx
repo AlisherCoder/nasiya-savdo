@@ -1,1 +1,1 @@
-export * from "./components/payment-popup/PaymentPopup"
+export * from './components/payment-popup/PaymentPopup';

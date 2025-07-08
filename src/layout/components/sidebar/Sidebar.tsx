@@ -1,12 +1,12 @@
-import React from "react";
-import { NavLink, useLocation } from "react-router-dom";
-import "./style.css";
-import { SIDEBAR_DATA } from "@/shared/static";
+import React from 'react';
+import { NavLink, useLocation } from 'react-router-dom';
+import './style.css';
+import { SIDEBAR_DATA } from '@/shared/static';
 
 const Sidebar = ({ show }: { show: boolean }) => {
-  const {pathname} = useLocation()
-  const active = pathname.split("/")[1] === "customer" ? "active" : ""
-  
+  const { pathname } = useLocation();
+  const active = pathname.split('/')[1] === 'customer' ? 'active' : '';
+
   return (
     <aside
       data-collapse={show}
@@ -22,9 +22,9 @@ const Sidebar = ({ show }: { show: boolean }) => {
         {SIDEBAR_DATA?.map((item: any) => (
           <li key={item.id}>
             <NavLink
-              className={
-                `h-9 p-2 rounded mb-2 sidebar-link flex items-center gap-2 ${item.path === "/" ? active : ""}`
-              }
+              className={`h-9 p-2 rounded mb-2 sidebar-link flex items-center gap-2 ${
+                item.path === '/' ? active : ''
+              }`}
               to={item.path}
             >
               {item.icon}

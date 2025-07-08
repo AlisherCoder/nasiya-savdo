@@ -1,10 +1,10 @@
-import { MoreOutlined } from "@ant-design/icons";
-import { Button, Dropdown } from "antd";
-import React from "react";
+import { MoreOutlined } from '@ant-design/icons';
+import { Button, Dropdown } from 'antd';
+import React from 'react';
 
-const Options = ({items}:{items:any}) => {
+const Options = ({ items }: { items: any }) => {
   return (
-    <Dropdown menu={{ items }} trigger={["click"]}>
+    <Dropdown menu={{ items }} trigger={['click']}>
       <Button>
         <MoreOutlined />
       </Button>

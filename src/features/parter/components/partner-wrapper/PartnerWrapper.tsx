@@ -1,9 +1,9 @@
-import { useMediaQuery } from "@/shared/hooks/useMediaQuery";
-import React, { type FC } from "react";
-import CardView from "./card-view/CardView";
-import TableView from "./table-view/TableView";
-import { Pagination } from "antd";
-import { useParamsHook } from "@/shared/hooks/useParamsHook";
+import { useMediaQuery } from '@/shared/hooks/useMediaQuery';
+import React, { type FC } from 'react';
+import CardView from './card-view/CardView';
+import TableView from './table-view/TableView';
+import { Pagination } from 'antd';
+import { useParamsHook } from '@/shared/hooks/useParamsHook';
 
 interface Props {
   data: undefined | any;
@@ -12,8 +12,8 @@ interface Props {
 
 const PartnerWrapper: FC<Props> = ({ data, loading }) => {
   const { getParam, setParam } = useParamsHook();
-  const page = getParam("page") || "1";
-  const matches = useMediaQuery("768");
+  const page = getParam('page') || '1';
+  const matches = useMediaQuery('768');
   return (
     <>
       {matches ? (
@@ -24,7 +24,7 @@ const PartnerWrapper: FC<Props> = ({ data, loading }) => {
       <div className="mt-6 flex justify-end">
         <Pagination
           current={Number(page)}
-          onChange={(value) => setParam("page", value.toString())}
+          onChange={(value) => setParam('page', value.toString())}
           pageSize={10}
           total={data?.total}
         />

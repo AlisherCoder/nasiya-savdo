@@ -1,6 +1,6 @@
-import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
-import React, { type FC } from "react";
-import Search from "./Search";
+import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons';
+import React, { type FC } from 'react';
+import Search from './Search';
 
 interface Props {
   setShow: React.Dispatch<React.SetStateAction<boolean>>;
@@ -16,7 +16,7 @@ const Nav: FC<Props> = ({ setShow, show }) => {
       >
         {show ? <MenuFoldOutlined /> : <MenuUnfoldOutlined />}
       </button>
-      <Search/>
+      <Search />
     </div>
   );
 };

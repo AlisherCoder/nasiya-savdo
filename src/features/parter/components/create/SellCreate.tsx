@@ -1,9 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 const SellCreate = () => {
-  return (
-    <div>SellCreate</div>
-  )
-}
+  return <div>SellCreate</div>;
+};
 
-export default React.memo(SellCreate)
+export default React.memo(SellCreate);

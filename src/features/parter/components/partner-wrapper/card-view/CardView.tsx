@@ -1,11 +1,11 @@
-import TelPopup from "@/shared/components/tel-popup/TelPopup";
-import { LoadingOutlined } from "@ant-design/icons";
-import { Button } from "antd";
-import React, { type FC } from "react";
-import { Link } from "react-router-dom";
-import PaymentPopup from "../../../../payment/components/payment-popup/PaymentPopup";
-import useGetRole from "@/shared/hooks/useGetRole";
-import PartnerOptions from "../partner-options/PartnerOptions";
+import TelPopup from '@/shared/components/tel-popup/TelPopup';
+import { LoadingOutlined } from '@ant-design/icons';
+import { Button } from 'antd';
+import React, { type FC } from 'react';
+import { Link } from 'react-router-dom';
+import PaymentPopup from '../../../../payment/components/payment-popup/PaymentPopup';
+import useGetRole from '@/shared/hooks/useGetRole';
+import PartnerOptions from '../partner-options/PartnerOptions';
 
 interface Props {
   data: undefined | any;
@@ -27,7 +27,7 @@ const CardView: FC<Props> = ({ data, loading }) => {
               </Link>
             </div>
             <div>
-               <PartnerOptions item={item} />
+              <PartnerOptions item={item} />
             </div>
           </div>
           <div className="flex justify-between my-3">
@@ -37,10 +37,10 @@ const CardView: FC<Props> = ({ data, loading }) => {
                 style={{
                   color:
                     item?.balance < 0
-                      ? "crimson"
+                      ? 'crimson'
                       : item?.balance > 0
-                      ? "green"
-                      : "grey",
+                      ? 'green'
+                      : 'grey',
                 }}
               >
                 {item?.balance.fprice()}

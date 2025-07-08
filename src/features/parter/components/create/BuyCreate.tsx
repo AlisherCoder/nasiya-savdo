@@ -1,5 +1,5 @@
-import { Button, Form, Input, type FormProps } from "antd";
-import React from "react";
+import { Button, Form, Input, type FormProps } from 'antd';
+import React from 'react';
 
 type FieldType = {
   price: number;
@@ -10,7 +10,7 @@ type FieldType = {
 const { TextArea } = Input;
 
 const BuyCreate = () => {
-  const onFinish: FormProps<FieldType>["onFinish"] = (values) => {
+  const onFinish: FormProps<FieldType>['onFinish'] = (values) => {
     console.log(values);
   };
 
@@ -27,7 +27,7 @@ const BuyCreate = () => {
           <Form.Item<FieldType>
             label="Miqdori"
             name="quantity"
-            rules={[{ required: true, message: "Please input your username!" }]}
+            rules={[{ required: true, message: 'Please input your username!' }]}
           >
             <Input />
           </Form.Item>
@@ -35,7 +35,7 @@ const BuyCreate = () => {
           <Form.Item<FieldType>
             label="Narxi"
             name="price"
-            rules={[{ required: true, message: "Please input your password!" }]}
+            rules={[{ required: true, message: 'Please input your password!' }]}
           >
             <Input />
           </Form.Item>

@@ -1,9 +1,9 @@
-import React from "react";
-import type { FormProps } from "antd";
-import { Alert, Button, Form, Input } from "antd";
-import { useAuth } from "../service/useAuth";
-import { useDispatch } from "react-redux";
-import { setToken } from "../store/auth.slice";
+import React from 'react';
+import type { FormProps } from 'antd';
+import { Alert, Button, Form, Input } from 'antd';
+import { useAuth } from '../service/useAuth';
+import { useDispatch } from 'react-redux';
+import { setToken } from '../store/auth.slice';
 
 type FieldType = {
   username?: string;
@@ -11,20 +11,18 @@ type FieldType = {
 };
 
 const Login: React.FC = () => {
-  const dispatch = useDispatch()
-  const {login} = useAuth()
-  const {isPending, error, isError} = login
+  const dispatch = useDispatch();
+  const { login } = useAuth();
+  const { isPending, isError } = login;
   // console.log(error?.response?.data?.message);
-  
 
-  const onFinish: FormProps<FieldType>["onFinish"] = (values) => {
+  const onFinish: FormProps<FieldType>['onFinish'] = (values) => {
     login.mutate(values, {
-      onSuccess:(res) => {
-        dispatch(setToken(res.token))
-      }
-    })
+      onSuccess: (res) => {
+        dispatch(setToken(res.token));
+      },
+    });
   };
-
 
   return (
     <div className="w-full h-screen bg-base-bg grid place-items-center">
@@ -39,7 +37,7 @@ const Login: React.FC = () => {
           <Form.Item<FieldType>
             label="Username"
             name="username"
-            rules={[{ required: true, message: "Please input your username!" }]}
+            rules={[{ required: true, message: 'Please input your username!' }]}
           >
             <Input />
           </Form.Item>
@@ -47,19 +45,26 @@ const Login: React.FC = () => {
           <Form.Item<FieldType>
             label="Password"
             name="password"
-            rules={[{ required: true, message: "Please input your password!" }]}
+            rules={[{ required: true, message: 'Please input your password!' }]}
           >
             <Input.Password />
           </Form.Item>
-          {
-            isError && 
-          <div className="mb-4">
-            <Alert message={"username or password is incorrect"} type="error" />
-          </div>
-          }
+          {isError && (
+            <div className="mb-4">
+              <Alert
+                message={'username or password is incorrect'}
+                type="error"
+              />
+            </div>
+          )}
 
-          <Form.Item style={{margin:0}} label={null}>
-            <Button loading={isPending} type="primary" className="w-full" htmlType="submit">
+          <Form.Item style={{ margin: 0 }} label={null}>
+            <Button
+              loading={isPending}
+              type="primary"
+              className="w-full"
+              htmlType="submit"
+            >
               Submit
             </Button>
           </Form.Item>

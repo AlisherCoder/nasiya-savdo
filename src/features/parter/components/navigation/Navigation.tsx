@@ -1,11 +1,11 @@
-import { PlusOutlined } from "@ant-design/icons";
-import { Button } from "antd";
-import React from "react";
-import PartnerPopup from "../partner-popup/PartnerPopup";
-import useGetRole from "@/shared/hooks/useGetRole";
-import { Role } from "@/shared/const";
-import { useShow } from "@/shared/hooks/useShow";
-import Tabs from "@/shared/ui/Tabs";
+import { PlusOutlined } from '@ant-design/icons';
+import { Button } from 'antd';
+import React from 'react';
+import PartnerPopup from '../partner-popup/PartnerPopup';
+import useGetRole from '@/shared/hooks/useGetRole';
+import { Role } from '@/shared/const';
+import { useShow } from '@/shared/hooks/useShow';
+import Tabs from '@/shared/ui/Tabs';
 
 const Navigation = () => {
   const { handleCancel, handleShow, isModalOpen } = useShow();
@@ -14,18 +14,18 @@ const Navigation = () => {
   const links = [
     {
       id: 1,
-      title: "Active",
-      path: role === Role.customer ? "/" : "",
+      title: 'Active',
+      path: role === Role.customer ? '/' : '',
     },
     {
       id: 2,
-      title: "Arxiv",
-      path: role === Role.customer ? "customer/archive" : "archive",
+      title: 'Arxiv',
+      path: role === Role.customer ? 'customer/archive' : 'archive',
     },
     {
       id: 3,
       title: "O'chirilganlar",
-      path: role === Role.customer ? "customer/disabled" : "disabled",
+      path: role === Role.customer ? 'customer/disabled' : 'disabled',
     },
   ];
 

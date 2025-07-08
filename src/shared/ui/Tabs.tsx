@@ -1,6 +1,6 @@
-import React, { type FC } from "react";
-import { NavLink } from "react-router-dom";
-import "./style.css";
+import React, { type FC } from 'react';
+import { NavLink } from 'react-router-dom';
+import './style.css';
 
 interface LinkItem {
   id: number;
@@ -19,7 +19,7 @@ const Tabs: FC<Props> = ({ links }) => {
         <NavLink
           end={true}
           key={link.id}
-          className={"navigation-link  py-0.5 text-gray-500 relative"}
+          className={'navigation-link  py-0.5 text-gray-500 relative'}
           to={link.path}
         >
           {link.title}

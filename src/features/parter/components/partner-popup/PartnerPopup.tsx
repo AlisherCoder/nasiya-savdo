@@ -1,9 +1,9 @@
-import React from "react";
-import { Button, Input, Modal, Form } from "antd";
-import { NumericFormat, PatternFormat } from "react-number-format";
-import { usePartner } from "../../service/usePartner";
-import useGetRole from "@/shared/hooks/useGetRole";
-import { useNavigate } from "react-router-dom";
+import React from 'react';
+import { Button, Input, Modal, Form } from 'antd';
+import { NumericFormat, PatternFormat } from 'react-number-format';
+import { usePartner } from '../../service/usePartner';
+import useGetRole from '@/shared/hooks/useGetRole';
+import { useNavigate } from 'react-router-dom';
 
 type FieldType = {
   fullname?: string;
@@ -32,8 +32,8 @@ const PartnerPopup: React.FC<Props> = ({
 
   const handleSubmit = (values: FieldType) => {
     values.role = role;
-    const phone_secondary = values.phone_secondary?.replace(/\s/gi, "");
-    const phone_primary = values.phone_primary?.replace(/\s/gi, "") || "";
+    const phone_secondary = values.phone_secondary?.replace(/\s/gi, '');
+    const phone_primary = values.phone_primary?.replace(/\s/gi, '') || '';
 
     const partner = {
       fullname: values.fullname,
@@ -43,14 +43,14 @@ const PartnerPopup: React.FC<Props> = ({
     };
 
     if (phone_secondary) {
-      if (phone_secondary.startsWith("+998")) {
+      if (phone_secondary.startsWith('+998')) {
         partner.phone.push(phone_secondary);
       } else {
-        partner.phone.push("+998" + phone_secondary);
+        partner.phone.push('+998' + phone_secondary);
       }
     }
-    if (!phone_primary.startsWith("+998")) {
-      partner.phone[0] = "+998" + phone_primary;
+    if (!phone_primary.startsWith('+998')) {
+      partner.phone[0] = '+998' + phone_primary;
     }
 
     if (previousData) {
@@ -60,7 +60,7 @@ const PartnerPopup: React.FC<Props> = ({
           onSuccess: () => {
             handleCancel();
           },
-        }
+        },
       );
     } else {
       createPartner.mutate(partner, {
@@ -76,10 +76,10 @@ const PartnerPopup: React.FC<Props> = ({
     <>
       <Modal
         title={
-          `${role === "seller" ? "Sotuvchi " : "Mijoz "}` +
-          `${previousData ? "tahrirlash" : "qo'shish"}`
+          `${role === 'seller' ? 'Sotuvchi ' : 'Mijoz '}` +
+          `${previousData ? 'tahrirlash' : "qo'shish"}`
         }
-        closable={{ "aria-label": "Custom Close Button" }}
+        closable={{ 'aria-label': 'Custom Close Button' }}
         open={isModalOpen}
         onCancel={handleCancel}
         footer={false}
@@ -94,7 +94,7 @@ const PartnerPopup: React.FC<Props> = ({
           <Form.Item<FieldType>
             label="Ism"
             name="fullname"
-            rules={[{ required: true, message: "Please input your username!" }]}
+            rules={[{ required: true, message: 'Please input your username!' }]}
           >
             <Input />
           </Form.Item>
@@ -102,7 +102,7 @@ const PartnerPopup: React.FC<Props> = ({
           <Form.Item<FieldType>
             label="Manzil"
             name="adress"
-            rules={[{ required: true, message: "Please input your password!" }]}
+            rules={[{ required: true, message: 'Please input your password!' }]}
           >
             <Input />
           </Form.Item>
@@ -110,11 +110,11 @@ const PartnerPopup: React.FC<Props> = ({
           <Form.Item<FieldType>
             label="Asosiy telefon raqam"
             name="phone_primary"
-            rules={[{ required: true, message: "Please input your password!" }]}
+            rules={[{ required: true, message: 'Please input your password!' }]}
           >
             <PatternFormat
               format="+998 ## ### ## ##"
-              mask={"_"}
+              mask={'_'}
               allowEmptyFormatting
               customInput={Input}
             />
@@ -124,12 +124,12 @@ const PartnerPopup: React.FC<Props> = ({
             label="Telefon raqam"
             name="phone_secondary"
             rules={[
-              { required: false, message: "Please input your password!" },
+              { required: false, message: 'Please input your password!' },
             ]}
           >
             <PatternFormat
               format="+998 ## ### ## ##"
-              mask={"_"}
+              mask={'_'}
               allowEmptyFormatting
               customInput={Input}
             />
@@ -139,7 +139,7 @@ const PartnerPopup: React.FC<Props> = ({
             <Form.Item<FieldType> label="Summa" name="balance">
               <NumericFormat
                 allowLeadingZeros
-                thousandSeparator={" "}
+                thousandSeparator={' '}
                 customInput={Input}
               />
             </Form.Item>
@@ -151,7 +151,7 @@ const PartnerPopup: React.FC<Props> = ({
               type="primary"
               htmlType="submit"
             >
-              {previousData ? "Saqlash" : "Ro'yxatga olish"}
+              {previousData ? 'Saqlash' : "Ro'yxatga olish"}
             </Button>
           </Form.Item>
         </Form>
